@@ -1,0 +1,16 @@
+{
+  "name": "model-hardware-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive local LLM GPU and context capacity calculator",
+  "scripts": {
+    "test": "node --test simulator.test.cjs bandwidth.test.cjs measurement-core.test.cjs ui.test.mjs bandwidth-ui.test.mjs pages.test.cjs",
+    "build": "node scripts/build-pages.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.14.6"
+  }
+}

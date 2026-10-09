@@ -1,0 +1,15 @@
+
+/* Searchable GPU/model catalogue */
+.lookup-group{position:relative}
+.lookup-group .catalog-search{flex-basis:170px}
+.catalog-results{position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:100;background:#101d23;border:1px solid #395057;border-radius:9px;box-shadow:0 14px 42px #000a;max-height:min(400px,58dvh);overflow-y:auto;padding:4px}
+.catalog-results[hidden]{display:none}
+.catalog-choice{width:100%;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:3px;background:none;border:0;border-radius:5px;padding:9px 10px;color:#d5e7e8;font-size:11px;line-height:1.25}
+.catalog-choice:hover,.catalog-choice[aria-selected=true]{background:#27423e;color:#e8ffed}
+.catalog-choice-title{font-weight:700}
+.catalog-choice small{font-size:9px;color:#9cb5bc}
+.catalog-empty{padding:14px;color:#93a6b2;font-size:11px}
+.hardware-spec-link{font-size:9px;white-space:nowrap;color:#9be3b1;text-decoration:none}
+.hardware-spec-link:hover{text-decoration:underline}
+.hardware-spec-link[hidden]{display:none}
+@media(max-width:950px){.lookup-group .catalog-search{flex-basis:105px}.hardware-spec-link{display:none}}
