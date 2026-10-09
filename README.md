@@ -72,3 +72,25 @@ Inputs are processed locally in the browser and are not sent to a server. Remove
 Documentation: [Ollama usage](https://github.com/ollama/ollama/blob/main/docs/api/usage.mdx), [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.md), [llama.cpp server response timings](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
 
 Run npm test for simulator, parser and UI tests. The app has no runtime dependencies.
+
+## Default startup configuration
+
+The startup and **Reset defaults** preset uses **NVIDIA RTX 5090 (32 GiB VRAM, 1,792 GB/s memory bandwidth)** and the illustrative **Qwen3.8-27B compact-quantisation model** (11.8 decimal GB weight-file estimate). The initial context is 65,536 tokens. These are capacity-planning assumptions, not inference benchmarks. **Optimise 16 GB** explicitly changes to the RTX 5060 Ti and uses a reduced KV cache footprint.
+
+## Publish on GitHub Pages
+
+The app is static and needs no API keys or application server. Repository: [BashirTowdiee/ModelHardwareCalculator](https://github.com/BashirTowdiee/ModelHardwareCalculator).
+
+1. Open the repository's **Settings → Pages → Build and deployment**, and select **GitHub Actions** as the source (if it has not already been selected).
+2. The workflow at .github/workflows/pages.yml runs automatically on pushes to main; it can also be started from the **Actions** tab using **Run workflow**.
+3. The workflow installs Node 22 dependencies with npm ci, runs all regression tests, builds the static site with npm run build, and deploys **only** the dist/ output via GitHub's Pages actions.
+4. After a successful **Publish Pages site** job, open the deployment URL from the workflow's github-pages environment. For this repository, the expected project-site URL is [https://bashirtowdiee.github.io/ModelHardwareCalculator/](https://bashirtowdiee.github.io/ModelHardwareCalculator/). A URL is not proof the deployment has completed; verify the GitHub Actions status first.
+
+Local commands:
+
+- npm ci — install dependencies for tests.
+- npm test — run calculation, runtime-measurement, interface and static publishing tests.
+- npm run build — create dist/ with index.html, referenced CSS/JS, and .nojekyll.
+- python3 -m http.server 8000 --directory dist — preview locally at http://localhost:8000/ (outside sandboxes that block TCP listeners).
+
+Pages project URLs include the repository path. All CSS and JavaScript are referenced with ./ URLs, so they resolve from both localhost and the GitHub Pages project subdirectory. Only referenced runtime assets are published. dist/ is ignored by Git; tests, README, development scripts, node_modules, and any unreferenced files are excluded from the published artifact. **GitHub Pages serves the app publicly**; do not commit private logs or measurements to the repository.

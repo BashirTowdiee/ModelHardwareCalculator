@@ -367,3 +367,33 @@ test('invalid input surfaces an error instead of a fabricated measurement; clear
   assert.equal(by(document,'measurementEmpty').hidden,false);
  }finally{await close();}
 });
+
+test('RTX 5090 and compact Qwen 27B start, reset and 16 GB optimisation behave as labelled', async () => {
+ const {window,document,close}=await loadApp();
+ try {
+   const initial=window.CalculatorApp.getState();
+   assert.equal(initial.hardware,'5090');
+   assert.equal(initial.model,'qwen38-gsr');
+   assert.equal(initial.vram,32);
+   assert.equal(initial.bandwidth,1792);
+   assert.equal(initial.ram,64);
+   assert.equal(document.getElementById('hardware').value,'5090');
+   assert.equal(document.getElementById('model').value,'qwen38-gsr');
+   assert.equal(document.getElementById('vizDevice').textContent,'RTX 5090');
+   assert.equal(document.getElementById('vizTiles').children.length,256);
+   assert.match(document.getElementById('bwPhysical').textContent,/1,792 GB\/s/);
+   change(window,document.getElementById('hardware'),'4090');
+   document.getElementById('presetDefault').click();
+   assert.equal(window.CalculatorApp.getState().hardware,'5090');
+   assert.equal(window.CalculatorApp.getState().bandwidth,1792);
+   document.getElementById('presetOptimised').click();
+   const smaller=window.CalculatorApp.getState();
+   assert.equal(smaller.hardware,'5060ti');
+   assert.equal(smaller.vram,16);
+   assert.equal(smaller.bandwidth,448);
+   assert.equal(smaller.model,'qwen38-gsr');
+   assert.equal(smaller.cache,'q8');
+   assert.equal(smaller.vision,false);
+   assert.equal(smaller.mtp,false);
+ } finally {await close();}
+});
