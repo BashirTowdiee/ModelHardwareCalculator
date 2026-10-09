@@ -136,7 +136,7 @@ test('Apple memory grid and large custom geometry stay bounded',async()=>{
    assert.ok(n.count<=320);
   }
   const css=fs.readFileSync('visualisations.css','utf8');
-  assert.match(css,/max-width:660px/);assert.match(css,/max-height:255px/);assert.match(css,/grid-auto-flow:column/);
+  assert.match(css,/max-width:660px/);assert.match(css,/\.viz-chip\{[^}]*max-height:none;overflow:visible/);assert.match(css,/grid-auto-flow:column/);
  }finally{await close();}
 });
 test('compare A and B show independent devices side by side and preserve A on B change',async()=>{
@@ -395,5 +395,22 @@ test('RTX 5090 and compact Qwen 27B start, reset and 16 GB optimisation behave a
    assert.equal(smaller.cache,'q8');
    assert.equal(smaller.vision,false);
    assert.equal(smaller.mtp,false);
+ } finally {await close();}
+});
+test('memory grid does not clip its eight rows or GiB ruler',async()=>{
+ const {document,close}=await loadApp();
+ try{
+   const css=fs.readFileSync('visualisations.css','utf8');
+   const studio=fs.readFileSync('studio.css','utf8');
+   assert.match(css,/\.viz-memory\{[\s\S]*?overflow-y:auto;/);
+   assert.match(css,/\.viz-memory>\.viz-chip\{padding:[^}]*max-height:none;overflow:visible/);
+   assert.match(css,/\.viz-tiles\{[\s\S]*?max-height:none;overflow:visible/);
+   assert.match(css,/\.viz-ruler\{[^}]*min-height:24px;flex-shrink:0/);
+   assert.doesNotMatch(studio,/\.viz-chip\{max-height:255px/);
+   assert.equal(document.querySelectorAll('#vizTiles .viz-tile').length,256);
+   assert.equal(document.querySelectorAll('#vizRuler .viz-ruler-tick').length>1,true);
+   document.getElementById('compareToggle').click();
+   assert.equal(document.querySelectorAll('#cmpTiles .viz-tile').length,128);
+   assert.equal(document.querySelectorAll('#cmpRuler .viz-ruler-tick').length>1,true);
  } finally {await close();}
 });

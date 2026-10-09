@@ -50,7 +50,7 @@
 .studio-exact input{width:105px;max-width:45%;font-size:12px;padding:7px;background:#0d181f;border:1px solid #456069;border-radius:4px;color:#eaf4f3;text-align:right}
 .studio-quick .visual-canvas{min-height:0}
 .studio-main>.visual-canvas{height:100%;min-height:0}
-.viz-chip{max-height:255px}
+/* The memory chip keeps its natural content height; panel scrolling handles very short viewports. */
 @media(max-width:1050px){.studio-main{grid-template-columns:230px minmax(0,1fr)}.studio-main>.visual-canvas{display:grid;grid-template-columns:1fr;overflow:auto}.studio-main .viz-compare{grid-column:auto}}
 @media(max-width:730px){
  body{overflow:auto}

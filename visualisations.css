@@ -1,18 +1,18 @@
 .visual-canvas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(265px,1fr) minmax(205px,.75fr);gap:12px;height:100%;min-height:0}.viz-panel{padding:14px 17px;display:flex;flex-direction:column;min-width:0;min-height:0}.viz-compare{grid-column:1/-1}.viz-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}.viz-head small{font-size:9px;letter-spacing:1px;color:#91d8ba;font-weight:750}.viz-head h2{font-size:clamp(16px,1.4vw,20px);line-height:1.2;margin:3px 0 4px;font-weight:700;letter-spacing:-.3px}.viz-head p{color:#849ca6;font-size:10px;margin:0;line-height:1.4}.viz-head>b{font-size:9px;border-radius:6px;padding:6px 8px;white-space:nowrap;letter-spacing:.3px}.viz-head>b.is-fit{border:1px solid #3a785f;background:#153c31;color:#a9e9c4}.viz-head>b.is-over{border:1px solid #8d4849;background:#42282d;color:#edada5}.viz-chip{border:1px solid #38565a;background:linear-gradient(110deg,#1a3137,#14252b);padding:10px 13px;border-radius:9px}.viz-chip-head,.viz-chip-label,.viz-chip-foot,.viz-host-label{display:flex;justify-content:space-between;gap:12px;align-items:center}.viz-chip-head{font-size:12px;color:#e1f5ef}.viz-chip-head span{font-size:10px;color:#9db9bb}.viz-chip-label{color:#98aeb6;margin:7px 0 5px;font-size:9px;letter-spacing:.5px}.viz-chip-label strong{color:#e2f1ee;font-size:11px}.viz-chip-foot{color:#849ba2;font-size:9px;margin-top:6px}.viz-tiles{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:3px;background:#102029;border:1px solid #3a4f59;padding:5px;border-radius:5px}.viz-tile{height:13px;min-width:0;border-radius:2px;box-shadow:inset 0 1px #ffffff1a}.viz-legend{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:12px}.viz-key,.viz-token-key{display:flex;gap:5px;flex-wrap:wrap;align-items:center;font-size:9px;color:#a1b4bb}.viz-key i,.viz-token-key i{height:8px;width:8px;border-radius:2px;flex-shrink:0}.viz-key b,.viz-token-key b{display:block;width:100%;color:#e4f0ed;font-size:11px}.viz-host{margin-top:auto;padding-top:9px}.viz-host-label{font-size:9px;color:#92abb0;letter-spacing:.3px}.viz-host-bar{margin-top:7px;height:12px;border-radius:6px;background:#273f47;overflow:hidden}.viz-host-bar>div{height:100%;background:linear-gradient(90deg,#7abbaf,#5b9c99);transition:width .2s}.viz-host-bar>div.over{background:#e99283}.viz-context-main{display:grid;grid-template-columns:155px 1fr;gap:15px;align-items:center;flex:1;min-height:155px}.viz-ring-wrap{height:152px;width:152px;position:relative;margin:auto}.viz-ring-wrap svg{height:100%;width:100%}.viz-ring-centre{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center}.viz-ring-centre strong{font-size:31px;letter-spacing:-1px}.viz-ring-centre small{font-size:10px;color:#92aab2}.viz-token-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px 8px}.viz-token-stats div{min-width:0;display:flex;flex-direction:column;gap:3px}.viz-token-stats span{font-size:10px;color:#91a9b1}.viz-token-stats strong{font-size:clamp(12px,1.3vw,17px);color:#dbece9;white-space:nowrap}.viz-context-bar{display:flex;overflow:hidden;border-radius:5px;border:1px solid #35474e;height:16px;background:#2e444e;margin-top:8px}.viz-context-seg{height:100%;min-width:0;transition:width .2s}.viz-token-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}.viz-note{font-size:10px;padding:8px 10px;background:#183027;border:1px solid #345a4c;border-radius:6px;color:#a6debf;line-height:1.35;margin:10px 0 0}.viz-note.warn{background:#362821;border-color:#7a533d;color:#f2bf97}.viz-scale{font-size:9px;color:#89a0a8;text-align:right;margin:-4px 0 5px}.viz-gpus{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(36px,auto);gap:4px 12px;overflow:auto;min-height:0}.viz-gpu-row{display:grid;grid-template-columns:minmax(120px,1.2fr) minmax(80px,1.7fr) 30px;gap:8px;align-items:center;border:1px solid transparent;background:#15272e;border-radius:5px;text-align:left;color:#e3efed;padding:5px 9px}.viz-gpu-row.active,.viz-gpu-row:hover{border-color:#4c816f;background:#203838}.viz-row-desc{min-width:0;display:flex;flex-direction:column;gap:1px}.viz-row-desc>b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.viz-row-desc>small{color:#8ba4ab;font-size:9px}.viz-track{position:relative;background:#30444e;border-radius:4px;height:11px;display:block}.viz-fill{background:#6bc5ab;height:100%;display:block;border-radius:4px}.viz-fill.miss{background:#8a7180}.viz-marker{position:absolute;top:-3px;height:17px;width:2px;background:#f2cb83;box-shadow:0 0 4px #edbf75}.viz-fit-label{font-size:9px;color:#9bdcb8;text-align:right}.viz-miss-label{font-size:9px;color:#eda9a2;text-align:right}.viz-disclaimer{margin:7px 0 0;font-size:9px;color:#8198a0;line-height:1.4}@media(max-width:1050px){.visual-canvas{grid-template-columns:1fr;grid-template-rows:auto}.viz-compare{grid-column:auto}.viz-gpus{max-height:340px}}@media(max-width:720px){.visual-canvas{display:flex;flex-direction:column}.viz-panel{padding:13px}.viz-tiles{grid-template-columns:repeat(16,1fr)}.viz-gpus{grid-template-columns:1fr;max-height:none}.viz-context-main{grid-template-columns:125px 1fr;gap:8px;min-height:135px}.viz-ring-wrap{height:120px;width:120px}.viz-ring-centre strong{font-size:24px}.viz-token-stats strong{font-size:12px}.viz-legend{grid-template-columns:repeat(3,1fr)}}
 
 /* Eight-row memory grid: columns scale with RAM, cells remain single-colour. */
-.viz-chip{width:100%;max-width:700px;max-height:255px;overflow:hidden;min-width:0}
+.viz-chip{width:100%;max-width:700px;max-height:none;overflow:visible;min-width:0;flex-shrink:0}
 .viz-memory-diagram{width:100%;max-width:660px;min-width:0}
 .viz-tiles{
- width:100%;max-width:100%;max-height:140px;overflow:hidden;
+ width:100%;max-width:100%;height:auto;max-height:none;overflow:visible;
  display:grid;grid-auto-flow:column;
  grid-template-columns:repeat(var(--viz-tile-columns,16),minmax(0,1fr));
- grid-template-rows:repeat(8,minmax(0,13px));
+ grid-template-rows:repeat(8,var(--viz-tile-height,11px));
  gap:2px;padding:5px;
  align-content:start;
 }
-.viz-tile{display:block;height:13px;min-height:0;min-width:0;width:100%;border-radius:2px}
-.viz-ruler{position:relative;height:24px;margin:2px 5px 0;border-top:1px solid #6a858e}
+.viz-tile{display:block;height:var(--viz-tile-height,11px);min-height:0;min-width:0;width:100%;border-radius:2px}
+.viz-ruler{position:relative;height:24px;min-height:24px;flex-shrink:0;margin:2px 5px 0;border-top:1px solid #6a858e}
 .viz-ruler-tick{position:absolute;top:-1px;width:1px;height:6px;background:#829ba3}
 .viz-ruler-tick.first,.viz-ruler-tick.last{height:9px;background:#c0d4d7}
 .viz-ruler-label{position:absolute;top:8px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:9px;color:#a7bcc1}
@@ -21,7 +21,29 @@
 .viz-chip-foot{display:flex;flex-wrap:wrap;gap:3px 12px}
 .viz-tile-scale{color:#c0e5d1;font-size:9px;font-weight:700;white-space:nowrap}
 @media(max-width:720px){
- .viz-tiles{grid-auto-flow:column;grid-template-columns:repeat(var(--viz-tile-columns,16),minmax(0,1fr));grid-template-rows:repeat(8,minmax(0,13px));max-height:140px}
- .viz-tile{height:13px}
+ .viz-tiles{grid-auto-flow:column;grid-template-columns:repeat(var(--viz-tile-columns,16),minmax(0,1fr));grid-template-rows:repeat(8,var(--viz-tile-height,11px));max-height:none}
+ .viz-tile{height:var(--viz-tile-height,11px)}
  .viz-ruler-label{font-size:8px}
+}
+/* Keep all eight memory rows and the ruler visible.
+   The chip must never flex-shrink and crop its children; on a short viewport
+   the panel scrolls instead. Row height reduces with the viewport. */
+.viz-memory{
+  --viz-tile-height:clamp(8px,1.2dvh,13px);
+  overflow-x:hidden;
+  overflow-y:auto;
+  scrollbar-width:thin;
+}
+.viz-memory>.viz-head,
+.viz-memory>.viz-chip,
+.viz-memory>.viz-legend,
+.viz-memory>.viz-host{flex-shrink:0}
+.viz-memory>.viz-head{margin-bottom:6px}
+.viz-memory>.viz-chip{padding:8px 11px;max-height:none;overflow:visible}
+.viz-memory .viz-chip-label{margin:5px 0 4px}
+.viz-memory .viz-chip-foot{margin-top:4px}
+.viz-memory>.viz-legend{margin-top:7px}
+.viz-memory>.viz-host{padding-top:6px}
+@media(max-width:720px){
+  .viz-memory{overflow:visible}
 }
